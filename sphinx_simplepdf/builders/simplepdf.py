@@ -179,7 +179,6 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
 
 
 def setup(app: Sphinx) -> Dict[str, Any]:
-    app.add_config_value("simplepdf_vars", {}, "html", types=[dict])
     app.add_config_value("simplepdf_file_name", None, "html", types=[str])
     app.add_config_value("simplepdf_debug", False, "html", types=bool)
     app.add_config_value("simplepdf_weasyprint_timeout", None, "html", types=[int])
@@ -188,7 +187,6 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     app.add_config_value("simplepdf_weasyprint_filter", [], "html", types=[list])
     app.add_config_value("simplepdf_use_weasyprint_api", None, "html", types=[bool])
     app.add_config_value("simplepdf_theme", "simplepdf_theme", "html", types=[str])
-    app.add_config_value("simplepdf_theme_options", {}, "html", types=[dict])
     app.add_config_value("simplepdf_sidebars", {"**": ["localtoc.html"]}, "html", types=[dict])
     app.add_builder(SimplePdfBuilder)
 
