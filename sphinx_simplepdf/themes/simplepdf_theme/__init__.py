@@ -41,6 +41,9 @@ def create_custom_css(app):
 
 # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
 def setup(app):
+    app.add_config_value("simplepdf_vars", {}, "html", types=[dict])
+    app.add_config_value("simplepdf_theme_options", {}, "html", types=[dict])
+
     app.add_html_theme('simplepdf_theme', path.abspath(path.dirname(__file__)))
     app.connect('builder-inited', create_custom_css)
 
